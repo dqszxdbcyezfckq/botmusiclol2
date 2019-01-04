@@ -100,4 +100,4 @@ client.on('message', msg => {
 	if (!msg.content.startsWith(tokens.prefix)) return;
 	if (commands.hasOwnProperty(msg.content.toLowerCase().slice(tokens.prefix.length).split(' ')[0])) commands[msg.content.toLowerCase().slice(tokens.prefix.length).split(' ')[0]](msg);
 });
-client.login("NDkzMTUwNzU1NjQ2MjEwMDUw.Dt7kWQ.fX0FfoE_VXnJaXI-j54HH7lJUfs");
+client.login("process.env.token");
