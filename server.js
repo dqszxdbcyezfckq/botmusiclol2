@@ -24,7 +24,6 @@ const commands = {
 			});
 			msg.channel.sendMessage(`Playing: **${song.title}** as requested by: **${song.requester}**`);
 			dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }), { passes : tokens.passes });
-			client.user.setPresence({game:{name:song.title, url: "https://www.twitch.tv/discordapp",type}})
 			let collector = msg.channel.createCollector(m => m);
 			collector.on('message', m => {
 				if (m.content.startsWith(tokens.prefix + 'pause')) {
