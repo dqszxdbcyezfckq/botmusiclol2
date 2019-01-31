@@ -93,7 +93,7 @@ const commands = {
 
 client.on('ready', () => {
 	console.log('ready!');
-	client.user.setPresence({game:{name:`owo uwu owo`,url: "https://www.twitch.tv/discordapp",type:1}})
+	client.user.setPresence({game:{name:`owo uwu owo`});
 });
 
 client.on('message', msg => {
