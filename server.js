@@ -20,7 +20,7 @@ const commands = {
 			if (song === undefined) return msg.channel.sendMessage(':x: Queue is empty').then(() => {
 				queue[msg.guild.id].playing = false;
 				msg.member.voiceChannel.leave();
-				 client.user.setPresence({game:{name:`owo uwu owo`,url: "https://www.twitch.tv/discordapp",type:1}})
+		
 			});
 			msg.channel.sendMessage(`Playing: **${song.title}** as requested by: **${song.requester}**`);
 			dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }), { passes : tokens.passes });
@@ -48,13 +48,13 @@ const commands = {
 			dispatcher.on('end', () => {
 				collector.stop();
 				play(queue[msg.guild.id].songs.shift());
-				client.user.setPresence({game:{ name: "3help",type}})
+				
 			});
 			dispatcher.on('error', (err) => {
 				return msg.channel.sendMessage('error: ' + err).then(() => {
 					collector.stop();
 					play(queue[msg.guild.id].songs.shift());
-					client.user.setPresence({game:{ name: "3help",type}})
+				
 				});
 			});
 		})(queue[msg.guild.id].songs.shift());
@@ -93,7 +93,7 @@ const commands = {
 
 client.on('ready', () => {
 	console.log('ready!');
-	client.user.setPresence({game:{ name: "3help",type}})
+	client.user.setPresence({game:{name:`owo uwu owo`,url: "https://www.twitch.tv/discordapp",type:1}})
 });
 
 client.on('message', msg => {
